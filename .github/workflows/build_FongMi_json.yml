@@ -17,7 +17,7 @@ jobs:
           pip install base58
 
       - name: Download remote config.js
-        run: wget -O raw_config.js https://cdn.vsca.top/LibreTV/config.js
+        run: wget -O raw_config.js https://pz.v88.qzz.io?format=2&source=full
 
       - name: Extract Base58 & Decode
         run: |
