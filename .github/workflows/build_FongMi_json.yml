@@ -1,4 +1,6 @@
 name: Build FongMi Source
+permissions:
+  contents: write
 on:
   schedule:
     - cron: '0 4 * * *'
@@ -9,6 +11,8 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install dependencies
         run: |
@@ -17,7 +21,7 @@ jobs:
           pip install base58
 
       - name: Download remote config.js
-        run: wget -O raw_config.js https://pz.v88.qzz.io?format=2&source=full
+        run: wget -O raw_config.js https://pz.v88.qzz.io/?format=2&source=full
 
       - name: Extract Base58 & Decode
         run: |
@@ -28,12 +32,12 @@ jobs:
           with open("raw_config.js", "r", encoding="utf-8") as f:
               content = f.read().strip()
 
-          # 匹配Base58字符串
-          b58_match = re.search(r'[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]{100,}', content)
+          b58_match = re.search(r'const data\s*=\s*["\']([123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]+)["\']', content)
           if not b58_match:
               print("ERROR: 未找到Base58编码串")
+              print("文件内容预览:", content[:500])
               exit(1)
-          b58_str = b58_match.group(0)
+          b58_str = b58_match.group(1)
 
           try:
               raw_bytes = base58.b58decode(b58_str)
@@ -63,7 +67,7 @@ jobs:
             ]
           }' source.json > fongmi_vod.json
 
-      - name: 写入 LibreTV/config.js（覆盖全部内容）
+      - name: 写入 LibreTV/config.js（纯JSON覆盖）
         run: |
           mkdir -p LibreTV
           cp fongmi_vod.json LibreTV/config.js
