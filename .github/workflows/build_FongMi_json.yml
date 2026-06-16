@@ -1,74 +1,81 @@
-name: Build FongMi Source
+name: Auto Update FongMi VOD Source
 permissions:
   contents: write
 on:
   schedule:
+    # 每日凌晨4点自动更新
     - cron: '0 4 * * *'
-  workflow_dispatch:
+  workflow_dispatch: # 支持手动运行
 jobs:
-  convert:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install dependencies
         run: |
-          sudo apt update
+          sudo apt update -y
           sudo apt install jq python3-pip -y
-          pip install base58
+          pip install base58 --upgrade
 
-      - name: Download remote config.js
-        run: wget -O raw_config.js https://pz.v88.qzz.io/?format=2&source=full
+      - name: Download remote base58 encrypted file
+        run: wget --no-cache -O raw_encrypt.js https://pz.v88.qzz.io/?format=2&source=full
 
-      - name: Base58 解码（全文直接解码）
+      - name: Base58 decode, auto UTF8/GBK adapt
         run: |
-          python3 << 'EOF'
+          python3 << 'PYEOF'
           import base58
-          with open("raw_config.js", "r", encoding="utf-8") as f:
-              b58_str = f.read().strip()
+          with open("raw_encrypt.js", "r", encoding="utf-8") as f:
+              b58_raw = f.read().strip()
           try:
-              raw_bytes = base58.b58decode(b58_str)
-              raw_json = raw_bytes.decode("utf-8")
+              decode_bytes = base58.b58decode(b58_raw)
           except Exception as e:
-              print(f"Base58解码失败: {e}")
+              print(f"Base58 decode failed: {e}")
               exit(1)
-          with open("source.json", "w", encoding="utf-8") as out:
-              out.write(raw_json)
-          print("解码成功，生成 source.json")
-          EOF
+          # 优先UTF8，失败自动切换GBK，解决emoji中文乱码
+          try:
+              json_text = decode_bytes.decode("utf-8")
+          except UnicodeDecodeError:
+              json_text = decode_bytes.decode("gbk")
+          with open("origin.json", "w", encoding="utf-8") as fw:
+              fw.write(json_text)
+          print("Decode success -> origin.json")
+          PYEOF
 
-      - name: CMS JSON 转 FongMi 标准sites
+      - name: Convert CMS api_site to FongMi standard JSON
         run: |
-          jq '{
+          jq -c '{
             "sites": [
-              .api_site | to_entries[] | {
-                "key": (.key | split(".")[0] | gsub("www";"") | gsub("[.]";"")),
-                "name": .value.name,
-                "type": 3,
-                "api": .value.api,
-                "searchable": 1,
-                "changeable": 1,
-                "recordable": 1
-              }
+              .api_site | to_entries[]
+              | select(.value.api | startswith("https"))
+              | {
+                  "key": (.key | split(".")[0] | gsub("www";"") | gsub("\\.";"")),
+                  "name": .value.name,
+                  "type": 3,
+                  "api": .value.api,
+                  "searchable": 1,
+                  "changeable": 1,
+                  "recordable": 1
+                }
             ]
-          }' source.json > fongmi_vod.json
+          }' origin.json > fongmi_final.json
 
-      - name: 输出到 LibreTV/config.js
+      - name: Write output to LibreTV/config.js
         run: |
           mkdir -p LibreTV
-          cp fongmi_vod.json LibreTV/config.js
+          cp fongmi_final.json LibreTV/config.js
 
-      - name: Git 提交更新
+      - name: Commit & push updated file
         run: |
-          git config user.name "Auto Bot"
-          git config user.email "bot@github.com"
+          git config --global user.name "FongMi Bot"
+          git config --global user.email "bot@github.com"
           git add LibreTV/config.js
-          if git diff --staged --quiet; then
-            echo "无内容变更，跳过提交"
+          if git diff --cached --quiet; then
+            echo "No content changes, skip commit & push"
           else
-            git commit -m "自动更新 LibreTV/config.js 点播源"
+            git commit -m "Auto sync vod source from remote cdn"
             git push
           fi
