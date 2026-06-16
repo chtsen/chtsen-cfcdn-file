@@ -1,9 +1,8 @@
 name: Build FongMi Source
 on:
   schedule:
-    # 每日自动更新，可自行修改cron
     - cron: '0 4 * * *'
-  workflow_dispatch: # 支持手动触发
+  workflow_dispatch:
 jobs:
   convert:
     runs-on: ubuntu-latest
@@ -18,10 +17,9 @@ jobs:
           pip install base58
 
       - name: Download config.js
-        run: |
-          wget -O raw_config.js https://pz.v88.qzz.io?format=2&source=full
+        run: wget -O raw_config.js https://cdn.vsca.top/LibreTV/config.js
 
-      - name: Base58 decode & export source.json
+      - name: Base58 decode export source.json
         run: |
           python3 << 'EOF'
           import base58
@@ -32,27 +30,25 @@ jobs:
           with open("source.json", "w", encoding="utf-8") as out:
               out.write(raw_json)
           print("Decode success, saved to source.json")
-EOF
+          EOF
 
-      - name: Convert CMS source.json to FongMi json
+      - name: Convert CMS json to FongMi format
         run: |
-          jq '
-          {
-            sites: [
+          jq '{
+            "sites": [
               .api_site | to_entries[] | {
-                key: (.key | split(".")[0] | gsub("www";"") | gsub("[.]";"")),
-                name: .value.name,
-                type: 3,
-                api: .value.api,
-                searchable: 1,
-                changeable: 1,
-                recordable: 1
+                "key": (.key | split(".")[0] | gsub("www";"") | gsub("[.]";"")),
+                "name": .value.name,
+                "type": 3,
+                "api": .value.api,
+                "searchable": 1,
+                "changeable": 1,
+                "recordable": 1
               }
             ]
-          }
-          ' source.json > fongmi_vod.json
+          }' source.json > fongmi_vod.json
 
-      - name: Commit & push generated file
+      - name: Commit push file
         run: |
           git config user.name "Auto Bot"
           git config user.email "bot@github.com"
