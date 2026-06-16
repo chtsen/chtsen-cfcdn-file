@@ -23,32 +23,21 @@ jobs:
       - name: Download remote config.js
         run: wget -O raw_config.js https://pz.v88.qzz.io/?format=2&source=full
 
-      - name: Extract Base58 & Decode
+      - name: Base58 解码（全文直接解码）
         run: |
           python3 << 'EOF'
           import base58
-          import re
-
           with open("raw_config.js", "r", encoding="utf-8") as f:
-              content = f.read().strip()
-
-          b58_match = re.search(r'const data\s*=\s*["\']([123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]+)["\']', content)
-          if not b58_match:
-              print("ERROR: 未找到Base58编码串")
-              print("文件内容预览:", content[:500])
-              exit(1)
-          b58_str = b58_match.group(1)
-
+              b58_str = f.read().strip()
           try:
               raw_bytes = base58.b58decode(b58_str)
               raw_json = raw_bytes.decode("utf-8")
           except Exception as e:
-              print(f"解码失败: {e}")
+              print(f"Base58解码失败: {e}")
               exit(1)
-
           with open("source.json", "w", encoding="utf-8") as out:
               out.write(raw_json)
-          print("Base58解码完成")
+          print("解码成功，生成 source.json")
           EOF
 
       - name: CMS JSON 转 FongMi 标准sites
@@ -67,7 +56,7 @@ jobs:
             ]
           }' source.json > fongmi_vod.json
 
-      - name: 写入 LibreTV/config.js（纯JSON覆盖）
+      - name: 输出到 LibreTV/config.js
         run: |
           mkdir -p LibreTV
           cp fongmi_vod.json LibreTV/config.js
