@@ -1,394 +1,661 @@
 {
-  "cache_time": 7200,
-  "api_site": {
-    "iqiyizyapi.com": {
+  "sites": [
+    {
+      "key": "iqiyizyapi",
       "name": "🎬-爱奇艺-",
+      "type": 3,
       "api": "https://iqiyizyapi.com/api.php/provide/vod",
-      "detail": "https://iqiyizyapi.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "dbzy.tv": {
-      "_comment": "有伦理片",
+    {
+      "key": "dbzy",
       "name": "🎬豆瓣资源",
+      "type": 3,
       "api": "https://caiji.dbzy5.com/api.php/provide/vod",
-      "detail": "https://dbzy.tv"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "mtzy.me": {
+    {
+      "key": "mtzy",
       "name": "🎬茅台资源",
+      "type": 3,
       "api": "https://caiji.maotaizy.cc/api.php/provide/vod",
-      "detail": "https://mtzy.me"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "wolongzyw.com": {
+    {
+      "key": "wolongzyw",
       "name": "🎬卧龙资源",
+      "type": 3,
       "api": "https://wolongzyw.com/api.php/provide/vod",
-      "detail": "https://wolongzyw.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "ikunzy.com": {
+    {
+      "key": "ikunzy",
       "name": "🎬iKun资源",
+      "type": 3,
       "api": "https://ikunzyapi.com/api.php/provide/vod",
-      "detail": "https://ikunzy.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "dyttzyapi.com": {
+    {
+      "key": "dyttzyapi",
       "name": "🎬电影天堂",
+      "type": 3,
       "api": "http://caiji.dyttzyapi.com/api.php/provide/vod",
-      "detail": "http://caiji.dyttzyapi.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "www.maoyanzy.com": {
+    {
+      "key": "",
       "name": "🎬猫眼资源",
+      "type": 3,
       "api": "https://api.maoyanapi.top/api.php/provide/vod",
-      "detail": "https://www.maoyanzy.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "cj.lzcaiji.com": {
+    {
+      "key": "cj",
       "name": "🎬量子资源",
+      "type": 3,
       "api": "https://cj.lzcaiji.com/api.php/provide/vod",
-      "detail": "https://cj.lzcaiji.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "360zy.com": {
+    {
+      "key": "360zy",
       "name": "🎬360 资源",
+      "type": 3,
       "api": "https://360zyzz.com/api.php/provide/vod",
-      "detail": "https://360zy.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "jszyapi.com": {
+    {
+      "key": "jszyapi",
       "name": "🎬极速资源",
+      "type": 3,
       "api": "https://jszyapi.com/api.php/provide/vod",
-      "detail": "https://jszyapi.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "www.moduzy.net": {
+    {
+      "key": "",
       "name": "🎬魔都资源",
+      "type": 3,
       "api": "https://www.mdzyapi.com/api.php/provide/vod",
-      "detail": "https://www.moduzy.net"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "ffzyapi.com": {
+    {
+      "key": "ffzyapi",
       "name": "🎬非凡资源",
+      "type": 3,
       "api": "https://api.ffzyapi.com/api.php/provide/vod",
-      "detail": "https://cj.ffzyapi.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "bfzy.tv": {
+    {
+      "key": "bfzy",
       "name": "🎬暴风资源",
+      "type": 3,
       "api": "https://bfzyapi.com/api.php/provide/vod",
-      "detail": "https://bfzy.tv"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "zuida.xyz": {
+    {
+      "key": "zuida",
       "name": "🎬最大资源",
+      "type": 3,
       "api": "https://api.zuidapi.com/api.php/provide/vod",
-      "detail": "https://zuida.xyz"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "wujinzy.me": {
+    {
+      "key": "wujinzy",
       "name": "🎬无尽资源",
+      "type": 3,
       "api": "https://api.wujinapi.me/api.php/provide/vod",
-      "detail": "https://wujinzy.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "xinlangapi.com": {
+    {
+      "key": "xinlangapi",
       "name": "🎬新浪资源",
+      "type": 3,
       "api": "https://api.xinlangapi.com/xinlangapi.php/provide/vod",
-      "detail": "https://xinlangapi.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "api.wwzy.tv": {
+    {
+      "key": "api",
       "name": "🎬旺旺资源",
+      "type": 3,
       "api": "https://api.wwzy.tv/api.php/provide/vod",
-      "detail": "https://api.wwzy.tv"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "www.subozy.com": {
+    {
+      "key": "",
       "name": "🎬速播资源",
+      "type": 3,
       "api": "https://subocaiji.com/api.php/provide/vod",
-      "detail": "https://www.subozy.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "jinyingzy.com": {
+    {
+      "key": "jinyingzy",
       "name": "🎬金鹰点播",
+      "type": 3,
       "api": "https://jinyingzy.com/api.php/provide/vod",
-      "detail": "https://jinyingzy.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "p2100.net": {
+    {
+      "key": "p2100",
       "name": "🎬飘零资源",
+      "type": 3,
       "api": "https://p2100.net/api.php/provide/vod",
-      "detail": "https://p2100.net"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "api.ukuapi88.com": {
+    {
+      "key": "api",
       "name": "🎬U酷影视",
+      "type": 3,
       "api": "https://api.ukuapi88.com/api.php/provide/vod",
-      "detail": "https://www.ukuzy.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "api.guangsuapi.com": {
+    {
+      "key": "api",
       "name": "🎬光速资源",
+      "type": 3,
       "api": "https://api.guangsuapi.com/api.php/provide/vod",
-      "detail": "https://api.guangsuapi.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "www.hongniuzy.com": {
+    {
+      "key": "",
       "name": "🎬红牛资源",
+      "type": 3,
       "api": "https://www.hongniuzy2.com/api.php/provide/vod",
-      "detail": "https://www.hongniuzy.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "caiji.moduapi.cc": {
+    {
+      "key": "caiji",
       "name": "🎬魔都动漫",
+      "type": 3,
       "api": "https://caiji.moduapi.cc/api.php/provide/vod",
-      "detail": "https://caiji.moduapi.cc"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "www.ryzyw.com": {
+    {
+      "key": "",
       "name": "🎬如意资源",
+      "type": 3,
       "api": "https://pz.v88.qzz.io/?url=https://cj.rycjapi.com/api.php/provide/vod",
-      "detail": "https://www.ryzyw.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "www.haohuazy.com": {
+    {
+      "key": "",
       "name": "🎬豪华资源",
+      "type": 3,
       "api": "https://pz.v88.qzz.io/?url=https://hhzyapi.com/api.php/provide/vod",
-      "detail": "https://www.haohuazy.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "bdzy1.com": {
+    {
+      "key": "bdzy1",
       "name": "🎬百度云zy",
+      "type": 3,
       "api": "https://pz.v88.qzz.io/?url=https://api.apibdzy.com/api.php/provide/vod",
-      "detail": "https://bdzy1.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "lovedan.net": {
+    {
+      "key": "lovedan",
       "name": "🎬艾旦影视",
+      "type": 3,
       "api": "https://pz.v88.qzz.io/?url=https://lovedan.net/api.php/provide/vod",
-      "detail": "https://lovedan.net"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "lzizy.net": {
-      "_comment": "备用",
+    {
+      "key": "lzizy",
       "name": "🎬量子影视",
+      "type": 3,
       "api": "https://cj.lziapi.com/api.php/provide/vod",
-      "detail": "https://lzizy.net"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "zuidazy.co": {
-      "_comment": "备用",
+    {
+      "key": "zuidazy",
       "name": "🎬最大点播",
+      "type": 3,
       "api": "https://zuidazy.me/api.php/provide/vod",
-      "detail": "https://zuidazy.co"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "wujinzy.com": {
-      "_comment": "备用",
+    {
+      "key": "wujinzy",
       "name": "🎬无尽影视",
+      "type": 3,
       "api": "https://api.wujinapi.com/api.php/provide/vod",
-      "detail": "https://wujinzy.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "wwzy.tv": {
-      "_comment": "备用",
+    {
+      "key": "wwzy",
       "name": "🎬旺旺短剧",
+      "type": 3,
       "api": "https://wwzy.tv/api.php/provide/vod",
-      "detail": "https://wwzy.tv"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "1080zyk4.com": {
-      "_comment": "无法搜索",
+    {
+      "key": "1080zyk4",
       "name": "🎬优质资源",
+      "type": 3,
       "api": "https://api.yzzy-api.com/inc/apijson.php",
-      "detail": "https://1080zyk4.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "www.huyaapi.com": {
-      "_comment": "污染搜索结果",
+    {
+      "key": "",
       "name": "🎬虎牙资源",
+      "type": 3,
       "api": "https://www.huyaapi.com/api.php/provide/vod",
-      "detail": "https://www.huyaapi.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "yayazy3.com": {
-      "_comment": "暂不支持搜索",
+    {
+      "key": "yayazy3",
       "name": "🎬鸭鸭资源",
+      "type": 3,
       "api": "https://cj.yayazy.net/api.php/provide/vod",
-      "detail": "https://yayazy3.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "suonizy.net": {
-      "_comment": "暂不支持搜索",
+    {
+      "key": "suonizy",
       "name": "🎬索尼资源",
+      "type": 3,
       "api": "https://suoniapi.com/api.php/provide/vod",
-      "detail": "https://suonizy.net"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "kuaichezy.com": {
-      "_comment": "暂不支持搜索",
+    {
+      "key": "kuaichezy",
       "name": "🎬快车资源",
+      "type": 3,
       "api": "https://caiji.kuaichezy.org/api.php/provide/vod",
-      "detail": "https://kuaichezy.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "shandianzy.com": {
-      "_comment": "暂不支持搜索",
+    {
+      "key": "shandianzy",
       "name": "🎬闪电资源",
+      "type": 3,
       "api": "https://xsd.sdzyapi.com/api.php/provide/vod",
-      "detail": "https://shandianzy.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "yhzy.cc": {
-      "_comment": " 403 Forbidden ",
+    {
+      "key": "yhzy",
       "name": "🎬樱花资源",
+      "type": 3,
       "api": "https://m3u8.apiyhzy.com/api.php/provide/vod",
-      "detail": "https://yhzy.cc"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "91md.me": {
+    {
+      "key": "91md",
       "name": "🔞麻豆视频",
+      "type": 3,
       "api": "https://91md.me/api.php/provide/vod",
-      "detail": "https://91md.me"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "lbapiby.com": {
+    {
+      "key": "lbapiby",
       "name": "🔞--AIvin-",
+      "type": 3,
       "api": "http://lbapiby.com/api.php/provide/vod",
-      "detail": "http://lbapiby.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "155zy2.com": {
+    {
+      "key": "155zy2",
       "name": "🔞155-资源",
+      "type": 3,
       "api": "https://155api.com/api.php/provide/vod",
-      "detail": "https://155zy2.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "apiyutu.com": {
+    {
+      "key": "apiyutu",
       "name": "🔞玉兔资源",
+      "type": 3,
       "api": "https://apiyutu.com/api.php/provide/vod",
-      "detail": "https://apiyutu.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "fhapi9.com": {
+    {
+      "key": "fhapi9",
       "name": "🔞番号资源",
+      "type": 3,
       "api": "http://fhapi9.com/api.php/provide/vod",
-      "detail": "http://fhapi9.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "apilsbzy1.com": {
+    {
+      "key": "apilsbzy1",
       "name": "🔞-老色逼-",
+      "type": 3,
       "api": "https://apilsbzy1.com/api.php/provide/vod",
-      "detail": "https://apilsbzy1.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "www.yytv4.cc": {
+    {
+      "key": "",
       "name": "🔞优优资源",
+      "type": 3,
       "api": "https://www.yytv4.cc/api.php/provide/vod",
-      "detail": "https://www.yytv4.cc"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "xiaojizy.live": {
+    {
+      "key": "xiaojizy",
       "name": "🔞小鸡资源",
+      "type": 3,
       "api": "https://api.xiaojizy.live/provide/vod",
-      "detail": "https://xiaojizy.live"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "hsckzy.xyz": {
+    {
+      "key": "hsckzy",
       "name": "🔞黄色仓库",
+      "type": 3,
       "api": "https://hsckzy.xyz/api.php/provide/vod",
-      "detail": "https://hsckzy.xyz"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "apidanaizi.com": {
+    {
+      "key": "apidanaizi",
       "name": "🔞-大奶子-",
+      "type": 3,
       "api": "https://apidanaizi.com/api.php/provide/vod",
-      "detail": "https://apidanaizi.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "jkunzyapi.com": {
+    {
+      "key": "jkunzyapi",
       "name": "🔞jkun资源",
+      "type": 3,
       "api": "https://jkunzyapi.com/api.php/provide/vod",
-      "detail": "https://jkunzyapi.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "lbapi9.com": {
+    {
+      "key": "lbapi9",
       "name": "🔞乐播资源",
+      "type": 3,
       "api": "https://lbapi9.com/api.php/provide/vod",
-      "detail": "https://lbapi9.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "Naixxzy.com": {
+    {
+      "key": "Naixxzy",
       "name": "🔞奶香资源",
+      "type": 3,
       "api": "https://Naixxzy.com/api.php/provide/vod",
-      "detail": "https://Naixxzy.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "slapibf.com": {
+    {
+      "key": "slapibf",
       "name": "🔞森林资源",
+      "type": 3,
       "api": "https://beiyong.slapibf.com/api.php/provide/vod",
-      "detail": "https://slapibf.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "apilj.com": {
+    {
+      "key": "apilj",
       "name": "🔞辣椒资源",
+      "type": 3,
       "api": "https://pz.v88.qzz.io/?url=https://apilj.com/api.php/provide/vod",
-      "detail": "https://apilj.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "shayuapi.com": {
+    {
+      "key": "shayuapi",
       "name": "🔞鲨鱼资源",
+      "type": 3,
       "api": "https://shayuapi.com/api.php/provide/vod",
-      "detail": "https://shayuapi.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "doudouzy.com": {
-      "_comment": " 不稳定 ",
+    {
+      "key": "doudouzy",
       "name": "🔞豆豆资源",
+      "type": 3,
       "api": "https://api.douapi.cc/api.php/provide/vod",
-      "detail": "https://doudouzy.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "didizy.com": {
+    {
+      "key": "didizy",
       "name": "🔞滴滴资源",
+      "type": 3,
       "api": "https://api.ddapi.cc/api.php/provide/vod",
-      "detail": "https://didizy.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "heiliaozy.cc": {
+    {
+      "key": "heiliaozy",
       "name": "🔞黑料资源",
+      "type": 3,
       "api": "https://www.heiliaozyapi.com/api.php/provide/vod",
-      "detail": "https://heiliaozy.cc"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "api.bwzym3u8.com": {
+    {
+      "key": "api",
       "name": "🔞百万资源",
+      "type": 3,
       "api": "https://api.bwzyz.com/api.php/provide/vod",
-      "detail": "https://api.bwzym3u8.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "thzy8.me": {
+    {
+      "key": "thzy8",
       "name": "🔞桃花资源",
+      "type": 3,
       "api": "https://thzy1.me/api.php/provide/vod",
-      "detail": "https://thzy8.me"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "www.jingpinx.com": {
+    {
+      "key": "",
       "name": "🔞精品资源",
+      "type": 3,
       "api": "https://www.jingpinx.com/api.php/provide/vod",
-      "detail": "https://www.jingpinx.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "ckzy.me": {
-      "_comment": "无搜索结果",
+    {
+      "key": "ckzy",
       "name": "🔞 CK-资源",
+      "type": 3,
       "api": "https://ckzy.me/api.php/provide/vod",
-      "detail": "https://ckzy.me"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "souavzyw.com": {
+    {
+      "key": "souavzyw",
       "name": "🔞souavZY",
+      "type": 3,
       "api": "https://api.souavzyw.net/api.php/provide/vod",
-      "detail": "https://api.souavzyw.net"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "www.xxibaozyw.com": {
-      "_comment": "无搜索结果",
+    {
+      "key": "",
       "name": "🔞细胞资源",
+      "type": 3,
       "api": "https://www.xxibaozyw.com/api.php/provide/vod",
-      "detail": "https://www.xxibaozyw.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "xiangjiaozyw.com": {
-      "_comment": "无搜索结果",
+    {
+      "key": "xiangjiaozyw",
       "name": "🔞香蕉资源",
+      "type": 3,
       "api": "https://www.xiangjiaozyw.com/api.php/provide/vod",
-      "detail": "https://www.xiangjiaozyw.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "www.msnii.com": {
-      "_comment": "无法搜索",
+    {
+      "key": "",
       "name": "🔞-美少女-",
+      "type": 3,
       "api": "https://www.msnii.com/api/json.php",
-      "detail": "https://www.msnii.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "www.pgxdy.com": {
-      "_comment": "无法搜索",
+    {
+      "key": "",
       "name": "🔞-黄AVZY",
+      "type": 3,
       "api": "https://www.pgxdy.com/api/json.php",
-      "detail": "https://www.pgxdy.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "www.kxgav.com": {
-      "_comment": "无法搜索",
+    {
+      "key": "",
       "name": "🔞白嫖资源",
+      "type": 3,
       "api": "https://www.kxgav.com/api/json.php",
-      "detail": "https://www.kxgav.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "xingba111.com": {
-      "_comment": "403 Forbidden",
+    {
+      "key": "xingba111",
       "name": "🔞杏吧资源",
+      "type": 3,
       "api": "https://xingba222.com/api.php/provide/vod",
-      "detail": "https://xingba111.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "dadizy11.com": {
-      "_comment": "污染搜索结果",
+    {
+      "key": "dadizy11",
       "name": "🔞大地资源",
+      "type": 3,
       "api": "https://dadiapi.com/feifei",
-      "detail": "https://dadizy11.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "semaozy1.com": {
-      "_comment": "无法搜索",
+    {
+      "key": "semaozy1",
       "name": "🔞色猫资源",
+      "type": 3,
       "api": "https://caiji.semaozy.net/inc/apijson_vod.php/provide/vod",
-      "detail": "https://semaozy1.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "aosikazy.com": {
-      "_comment": "禁止搜索结果",
+    {
+      "key": "aosikazy",
       "name": "🔞-奥斯卡-",
+      "type": 3,
       "api": "https://aosikazy.com/api.php/provide/vod",
-      "detail": "https://aosikazy.com"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     },
-    "siwazyw.tv": {
-      "_comment": "污染搜索结果",
+    {
+      "key": "siwazyw",
       "name": "🔞丝袜资源",
+      "type": 3,
       "api": "https://siwazyw.tv/api.php/provide/vod",
-      "detail": "https://siwazyw.tv"
+      "searchable": 1,
+      "changeable": 1,
+      "recordable": 1
     }
-  }
+  ]
 }
